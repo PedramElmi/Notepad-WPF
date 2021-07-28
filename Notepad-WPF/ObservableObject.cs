@@ -9,15 +9,13 @@ using System.Windows.Data;
 
 namespace Notepad_WPF
 {
-    public class ObservableObject : ObjectDataProvider
+    public class ObservableObject : INotifyPropertyChanged
     {
-        /// <summary>
-        /// Simplified version
-        /// </summary>
-        /// <param name="name"></param>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public virtual void OnPropertyChanged([CallerMemberName] string name = null)
         {
-            OnPropertyChanged(new PropertyChangedEventArgs(name));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
     }
 }

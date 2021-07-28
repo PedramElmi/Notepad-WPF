@@ -8,7 +8,7 @@ namespace Notepad_WPF.Models
 {
     public class DocumentModel : ObservableObject
     {
-        private string _text = string.Empty;
+        private string _text;
 
         public string Text
         {
@@ -16,7 +16,7 @@ namespace Notepad_WPF.Models
             set { _text = value; OnPropertyChanged(); }
         }
 
-        private string _filePath = string.Empty;
+        private string _filePath;
 
         public string FilePath
         {
@@ -24,7 +24,7 @@ namespace Notepad_WPF.Models
             set { _filePath = value; OnPropertyChanged(); }
         }
 
-        private string _fileName = string.Empty;
+        private string _fileName;
 
         public string FileName
         {
